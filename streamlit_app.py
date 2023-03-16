@@ -5,7 +5,29 @@ with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 #####################
-# Header 
+# Header
+# Define the text to be blinked
+text = "Blinking Text"
+
+# Define the CSS styling for the blinking effect
+css = """
+@keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+.blink {
+    animation: blink 1s infinite;
+}
+"""
+
+# Add the CSS styling to the page
+st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
+# Add the blinking text to the page
+st.markdown(f"<p class='blink'>{text}</p>", unsafe_allow_html=True)
+
+
 st.write('''
 # Rajaram Kuberan
 ##### *Profile* 
