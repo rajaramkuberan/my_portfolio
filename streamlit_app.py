@@ -16,7 +16,7 @@ css = """
     100% { transform: translateX(0%); }
 }
 .slide {
-    animation: slide 2s ease-in-out infinite;
+    animation: slide 1s linear infinite;
     display: inline-block;
 }
 """
