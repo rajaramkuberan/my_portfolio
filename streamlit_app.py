@@ -6,17 +6,17 @@ with open("style.css") as f:
 
 #####################
 # Header
-# Define the text to be slid
-text = "Sliding Text"
+# Define the text to be slide
+text = "Please allow 30 secs to load the full profile"
 
 # Define the CSS styling for the sliding effect
 css = """
 @keyframes slide {
     0% { transform: translateX(-100%); }
-    100% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
 }
 .slide {
-    animation: slide 1s linear infinite;
+    animation: slide 4s linear infinite;
     display: inline-block;
 }
 """
@@ -26,6 +26,7 @@ st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 # Add the sliding text to the page
 st.markdown(f"<p class='slide'>{text}</p>", unsafe_allow_html=True)
+
 
 st.write('''
 # Rajaram Kuberan
