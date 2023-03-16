@@ -6,27 +6,26 @@ with open("style.css") as f:
 
 #####################
 # Header
-# Define the text to be blinked
-text = "Blinking Text"
+# Define the text to be slid
+text = "Sliding Text"
 
-# Define the CSS styling for the blinking effect
+# Define the CSS styling for the sliding effect
 css = """
-@keyframes blink {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
+@keyframes slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
 }
-.blink {
-    animation: blink 1s infinite;
+.slide {
+    animation: slide 2s ease-in-out infinite;
+    display: inline-block;
 }
 """
 
 # Add the CSS styling to the page
 st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
-# Add the blinking text to the page
-st.markdown(f"<p class='blink'>{text}</p>", unsafe_allow_html=True)
-
+# Add the sliding text to the page
+st.markdown(f"<p class='slide'>{text}</p>", unsafe_allow_html=True)
 
 st.write('''
 # Rajaram Kuberan
